@@ -11,7 +11,6 @@ const closeModal = document.querySelector(".modal header .close");
 
 const rulesButton = document.querySelector("footer button");
 const modal = document.querySelector(".modal");
-let gameScore = 0;
 
 const arr = ["paper", "scissors", "rock"];
 const rules = {
@@ -19,6 +18,9 @@ const rules = {
   scissors: "paper",
   paper: "rock",
 };
+
+let gameScore = Number.parseInt(localStorage.getItem("score")) || 0;
+score.textContent = gameScore;
 
 circles.forEach((ele) => {
   ele.addEventListener("click", (e) => {
@@ -41,6 +43,7 @@ circles.forEach((ele) => {
         resultSpan.textContent = "You Win";
         userPicked.classList.add("winner");
         gameScore += 1;
+        localStorage.setItem("score", gameScore);
 
         score.textContent = gameScore;
       }, 2000);
@@ -50,6 +53,7 @@ circles.forEach((ele) => {
         resultSpan.textContent = "You Lose";
         housePicked.classList.add("winner");
         gameScore -= 1;
+        localStorage.setItem("score", gameScore);
         score.textContent = gameScore;
       }, 2000);
     } else {

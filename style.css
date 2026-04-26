@@ -373,6 +373,7 @@ footer {
       .circle {
         width: 8.5rem;
         height: 8.5rem;
+        border-width: 1rem;
       }
     }
 
