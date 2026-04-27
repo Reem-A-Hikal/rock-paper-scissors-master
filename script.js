@@ -11,6 +11,7 @@ const closeModal = document.querySelector(".modal header .close");
 
 const rulesButton = document.querySelector("footer button");
 const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
 
 const arr = ["paper", "scissors", "rock"];
 const rules = {
@@ -76,8 +77,10 @@ playAgain.addEventListener("click", () => {
 
 rulesButton.addEventListener("click", (e) => {
   modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
 });
 
 closeModal.addEventListener("click", (e) => {
   modal.classList.add("hidden");
+  overlay.classList.add("hidden");
 });
