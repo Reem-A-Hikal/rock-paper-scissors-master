@@ -76,11 +76,11 @@ playAgain.addEventListener("click", () => {
 });
 
 rulesButton.addEventListener("click", (e) => {
-  modal.classList.remove("hidden");
+  modal.classList.add("show");
   overlay.classList.remove("hidden");
 });
 
 closeModal.addEventListener("click", (e) => {
-  modal.classList.add("hidden");
+  modal.classList.remove("show");
   overlay.classList.add("hidden");
 });
